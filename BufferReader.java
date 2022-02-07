@@ -1,9 +1,10 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.time.LocalDateTime;
 
 public class BufferReader {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CustomException {
         System.out.println("Type something:");
         try {
             BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
@@ -12,6 +13,7 @@ public class BufferReader {
         }
         catch(IOException e){
             e.printStackTrace();
+            throw new CustomException("Random Cause", LocalDateTime.now());
         }
     }
 }
